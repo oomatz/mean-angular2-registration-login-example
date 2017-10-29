@@ -20,14 +20,14 @@ export class UserService {
   }
 
   create(user: User) {
-      return this.http.post('/users/register', user);
+      return this.http.post('/users/register', user, {responseType: 'text'});
   }
 
   update(user: User) {
-      return this.http.put('/users/' + user._id, user);
+      return this.http.put('/users/' + user._id, user, {responseType: 'text'});
   }
 
   delete(_id: string) {
-      return this.http.delete('/users/' + _id);
+      return this.http.delete('/users/' + _id, {responseType: 'text'});
   }
 }
